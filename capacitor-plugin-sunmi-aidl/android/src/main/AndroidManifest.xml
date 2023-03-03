@@ -1,0 +1,30 @@
+
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      package="com.rebelity.plugins.sunmiaidl">
+
+      <application android:hardwareAccelerated="true" android:supportsRtl="true">
+
+          <receiver android:name="com.rebelity.plugins.sunmiaidl.PrinterStatusReceiver" android:enabled="true">
+              <intent-filter android:priority="1000">
+                  <action android:name="woyou.aidlservice.jiuv5.OUT_OF_PAPER_ACTION" />
+                  <action android:name="woyou.aidlservice.jiuv5.ERROR_ACTION" />
+                  <action android:name="woyou.aidlservice.jiuv5.NORMAL_ACTION" />
+                  <action android:name="woyou.aidlservice.jiuv5.COVER_OPEN_ACTION" />
+                  <action android:name="woyou.aidlservice.jiuv5.COVER_ERROR_ACTION" />
+                  <action android:name="woyou.aidlservice.jiuv5.KNIFE_ERROR_ACTION_1" />
+                  <action android:name="woyou.aidlservice.jiuv5.KNIFE_ERROR_ACTION_2" />
+                  <action android:name="woyou.aidlservice.jiuv5.OVER_HEATING_ACITON" />
+                  <action android:name="woyou.aidlservice.jiuv5.FIRMWARE_UPDATING_ACITON" />
+              </intent-filter>
+          </receiver>
+          <service android:name="woyou.aidlservice.jiuiv5.IWoyouService"
+              tools:ignore="Instantiatable">
+              <intent-filter>
+                  <action android:name="woyou.aidlservice.jiuiv5.IWoyouService" />
+              </intent-filter>
+          </service>
+      </application>
+
+  </manifest>
+  
